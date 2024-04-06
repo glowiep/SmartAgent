@@ -10,6 +10,7 @@ class ForwardsMailbox < ApplicationMailbox
       status_id: 1,
       agent_id: 1
     )
+    ActionCable.server.broadcast('tickets', ticket)
     conversation = ticket.conversations.create!(
       body: clean_body(mail),
       from_customer: true,

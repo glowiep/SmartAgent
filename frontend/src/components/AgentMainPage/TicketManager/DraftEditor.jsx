@@ -40,6 +40,6 @@ function DraftEditor({ customer_name }) {
       <p>{editorState}</p> {/* Display the editor content */}
     </div>
   );
-};
+}
 
 export default DraftEditor;

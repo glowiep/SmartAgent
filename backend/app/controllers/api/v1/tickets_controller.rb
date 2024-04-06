@@ -41,7 +41,8 @@ class Api::V1::TicketsController < ApplicationController
       render json: @ticket.errors, status: :unprocessable_entity
     end
   end
-
+  # POST api/v1/tickets/1/respond
+  # POST api/v1/tickets/1/respond.json
   def respond
     @ticket = Ticket.find(params[:ticket_id])
     response = params[:response]
