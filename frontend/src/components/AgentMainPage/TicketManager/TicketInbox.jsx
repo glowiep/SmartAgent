@@ -45,12 +45,14 @@ function TicketInbox() {
     // clearInboxInputRef();
     setNewNoteBody("");
     setSubmitNote(false);
+    setAddNoteVisible(false);
     document.getElementById("modal-box")?.Modal.close();
   };
 
   // For Notes
   const [newNoteBody, setNewNoteBody] = useState("");
   const [submitNote, setSubmitNote] = useState(false);
+  const [addNoteVisible, setAddNoteVisible] = useState(false);
 
   const createNote = (value, ticket_id) => {
     axios
@@ -180,8 +182,10 @@ function TicketInbox() {
                           <div className="modal-box">
                             <div className="flex flex-col items-center">
                               <h3 className="text-4xl font-bold dark:text-white">
-                                Transfer Ticket
+                                {addNoteVisible ? "Add Note" : "Transfer Ticket"}
                               </h3>
+                              {!addNoteVisible && 
+                              <div>
                               <p className="pt-6 text-2xl mb-2 dark:text-white flex flex-col items-center justify-center gap-2">
                                 Currently Assigned to:
                                 <p className="font-bold">
@@ -200,6 +204,7 @@ function TicketInbox() {
                                 list="agents"
                                 placeholder="Transfer to..."
                                 className="input input-bordered dark:text-white"
+                                onFocus={() => setSubmitNote(false)}
                                 onChange={(event) => {
                                   const agent = agents.find(
                                     (agent) =>
@@ -222,6 +227,8 @@ function TicketInbox() {
                                   </option>
                                 ))}
                               </datalist>
+                              </div>
+                              }
                               {/* Bug with clear name button for resolved tickets in inbox view */}
                               {/* <button
                                 type="submit"
@@ -234,7 +241,7 @@ function TicketInbox() {
                               </button> */}
                             </div>
                             <div className="flex flex-col justify-center items-center gap-2 mt-5">
-                              <textarea
+                              {addNoteVisible && <textarea
                                 id="note"
                                 name="note"
                                 value={newNoteBody}
@@ -246,7 +253,7 @@ function TicketInbox() {
                                 className="textarea textarea-bordered textarea-lg mt-4 w-full max-w-xs dark:text-white"
                                 component="textarea"
                                 rows="2"
-                              />
+                              />}
 
                               <div
                                 className={`mt-5 ${
@@ -276,19 +283,30 @@ function TicketInbox() {
                                 </div>
                               </div>
 
-                              {/* Add Note button */}
                               <div className="flex flex-row justify-center items-center">
+                                {/* Add Note button */}
                                 <button
+                                  className="btn btn-primary ml-2"
+                                  onClick={() => {
+                                    setAddNoteVisible(!addNoteVisible);
+                                  }}
+                                >
+                                  {addNoteVisible ? "Transfer Ticket" : "Add Note"}
+                                </button>
+
+                                {/* Submit Note button */}
+                                {addNoteVisible && <button
                                   className="btn btn-primary ml-2"
                                   onClick={() => {
                                     createNote(newNoteBody, ticket.id);
                                     console.log(newNoteBody);
                                     setNewNoteBody("");
                                     setSubmitNote(true);
+                                    setAddNoteVisible(false);
                                   }}
                                 >
-                                  Add Note
-                                </button>
+                                  Submit
+                                </button>}
 
                                 {/* View ticket button */}
                                 <button
