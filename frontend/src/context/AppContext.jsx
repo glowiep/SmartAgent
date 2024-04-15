@@ -89,6 +89,8 @@ function reducer(state, action) {
         ...state,
         loggedInAgent: { agent_id: action.payload.agent_id, full_name: action.payload.full_name}
       };
+    case ACTIONS.GET_TICKET_AFTER_TRANSFER:
+    return { ...state, ticketData: action.payload, ticketUpdated: true };
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
