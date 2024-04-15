@@ -1,0 +1,70 @@
+import { menuItems } from "../../../constants/sidebar-menu-items";
+import { Link } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+
+function IconSidebar() {
+  const { logout } = useContext(AuthContext);
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.delete("http://localhost:3000/logout");
+      console.log(response.data);
+      logout();
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <ul className=" flex flex-col items-center bg-base-100 border-r-8 border-double h-full">
+      {menuItems.map((item, index) => (
+        <li key={index}>
+          <Link
+            to={item.path}
+            className="tooltip tooltip-right mt-10"
+            data-tip={item.tooltip}
+          >
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              {item.icon}
+            </div>
+          </Link>
+        </li>
+      ))}
+      <li className="mt-10">
+        <div className="flex-none gap-2">
+          <div className="dropdown dropdown-right">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <CgProfile className="w-[30px] h-[30px]" />
+            </div>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link to="/Profile">Profile</Link>
+              </li>
+
+              <li>
+                <button onClick={handleLogout}>Logout</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  );
+}
+
+export default IconSidebar;

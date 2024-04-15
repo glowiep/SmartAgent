@@ -1,0 +1,15 @@
+<div class="email-header">
+  <h1>Hello, <%= @ticket.customer_name %></h1>
+</div>
+<div class="email-body">
+  <p>
+    We have responded to your ticket [<span class="ticket-id">#<%= @ticket.id %></span>]. Here is our response:
+  </p>
+  <p>
+    <%= @response %>
+    <%= @attachment %>
+  </p>
+  <p>
+    Thank you for your patience.
+  </p>
+</div>
