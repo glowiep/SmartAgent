@@ -1,9 +1,10 @@
 <div class="email-header">
-  <h1>Hello, <%= @ticket.customer_name %></h1>
+  <%= image_tag("SmartAgent-icon.svg", alt: "logo")%>
+  <h1>SmartAgent</h1>
 </div>
 <div class="email-body">
   <p>
-    We have responded to your ticket [<span class="ticket-id">#<%= @ticket.id %></span>]. Here is our response:
+    We have responded to your ticket [<span class="ticket-id">#<%= @ticket.id %></span>].
   </p>
   <p>
     <%= @response %>

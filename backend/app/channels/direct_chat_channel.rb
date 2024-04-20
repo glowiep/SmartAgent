@@ -8,3 +8,4 @@ class DirectChatChannel < ApplicationCable::Channel
     stop_all_streams
   end
 end
+
