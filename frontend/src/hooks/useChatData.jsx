@@ -13,7 +13,7 @@ useEffect(() => {
     dispatch({ type: "SET_UNREAD", payload: response.data });
   });
 
-  const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+  const cable = ActionCable.createConsumer("wss://meerkat-dear-redbird.ngrok-free.app/cable");
   const suscription = cable.subscriptions.create("DirectChatChannel", {
     received: (response) => {
       console.log("Received a message:", response);

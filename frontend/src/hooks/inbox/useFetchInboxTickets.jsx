@@ -70,7 +70,7 @@ const useFetchInboxTickets = (setIsLoading) => {
   };
 
   useEffect(() => {
-    const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+    const cable = ActionCable.createConsumer("wss://meerkat-dear-redbird.ngrok-free.app/cable");
     const subscription = cable.subscriptions.create("TicketsChannel", {
       received: (data) => {
         const ticketInInbox = inboxTicketsRef.current.find(

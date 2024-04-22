@@ -44,7 +44,7 @@ const DirectChat = ({ agent, currentAgentId }) => {
       });
 
     // Create a WebSocket connection
-    const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+    const cable = ActionCable.createConsumer("wss://meerkat-dear-redbird.ngrok-free.app/cable");
 
     // Subscribe to the DirectChatChannel
     const subscription = cable.subscriptions.create("DirectChatChannel", {

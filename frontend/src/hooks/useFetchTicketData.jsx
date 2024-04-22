@@ -23,7 +23,7 @@ const useFetchTicketData = (API_URL, dispatch, ticket_id) => {
 
         if (ticketId === ticket_id) {
           // Establish WebSocket connection after fetching ticket data
-          const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+          const cable = ActionCable.createConsumer("wss://meerkat-dear-redbird.ngrok-free.app/cable");
           const subscription = cable.subscriptions.create(
             { channel: "TicketsChannel", ticket: ticket_id },
             {

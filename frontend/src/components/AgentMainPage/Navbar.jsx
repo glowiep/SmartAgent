@@ -9,7 +9,7 @@ function Navbar() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.delete("http://localhost:3000/logout");
+      const response = await axios.delete("https://meerkat-dear-redbird.ngrok-free.app/logout");
       console.log(response.data);
       logout();
       navigate("/login");

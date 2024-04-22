@@ -50,7 +50,7 @@ function TicketInfo() {
     conversationsEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   useEffect(() => {
-    const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+    const cable = ActionCable.createConsumer("wss://meerkat-dear-redbird.ngrok-free.app/cable");
     const subscription = cable.subscriptions.create("NotesChannel", {
       received: (data) => {
         setNotes([data, ...notes]);

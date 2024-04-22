@@ -13,6 +13,7 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'#meerkat-dear-redbird.ngrok-free.app'
   # Show full error reports.
   config.consider_all_requests_local = true
+  config.action_cable.allowed_request_origins = ['http://localhost:5173','https://meerkat-dear-redbird.ngrok-free.app']
 
   # Enable server timing
   config.server_timing = true

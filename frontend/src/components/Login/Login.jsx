@@ -17,7 +17,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/login", {
+      const response = await axios.post("https://meerkat-dear-redbird.ngrok-free.app/login", {
         email,
         password
     });
