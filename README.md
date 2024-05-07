@@ -1,9 +1,15 @@
 # SmartAgent 💬
 SmartAgent is a customer support ticket management application, paired with an AI assistant.
 
-<!-- ## Goals 🏆 -->
+## Goals 🏆
 
-<!-- ## Features ✅ -->
+This is a 4-week collaborative final project by [Gloria Lim](https://github.com/glowiep) and [Sebastian Varon](https://github.com/svaronc).
+
+The goals of this project was to:
+- Leverage all the skills and knowledge learned throughout Lighthouse Labs Web Development Bootcamp
+- Practice creating functional requirements, user stories, and wireframes.
+- Build an application from start to finish, created with React (frontend) and Ruby on Rails (backend).
+
 
 
 ## Getting Started ✨
@@ -12,6 +18,11 @@ To run this project locally, clone this repository and navigate to the root dire
 ### Requirements
 - Ruby version 3.3.0
 - NodeJS >= 18.15.0
+
+Notes on the AI Chatbot on the Landing page created with [FlowiseAI](https://flowiseai.com/):
+- The FlowiseAI chatbot on the landing page was hosted on Railway during the project demonstration. 
+- The FlowiseAI configuration can be replicated by importing the json file in planning/FlowiseAI into your Flowise project. The accompanying text file is the input document for the Text File Loader.
+- Please see .env.example file in /frontend for the secret keys setup for the connection to the FlowiseAI project.
 
 ### Back-end 🚅
 1. Navigate to the /backend folder.
@@ -33,6 +44,42 @@ To run this project locally, clone this repository and navigate to the root dire
 
 3. Run ```npm run dev``` to start the frontend server. It will run on http://localhost:5173
 
+
+
+## Features ✅
+
+SmartAgent has a landing page for Customers and SmartAgent users.
+![SmartAgent landing page](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/1_LandingPage.png?raw=true)
+
+Customers can submit requests via the form on the landing page, or by emailing SmartAgent email directly.
+![Customer Support Request Form](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/2_CustomerSupportRequestForm.png?raw=true)
+
+There is also an AI chatbot on the landing page to assist with general questions regarding the SmartAgent application.
+![AI Chatbot](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/3_Chatbot.png?raw=true)
+
+When a SmartAgent user is logged in, they can view the main application inbox:
+![SmartAgent Inbox](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/4_SmartAgentInbox.png?raw=true)
+
+Agents are able to chat within the application.
+![Agent Chat](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/5_AgentChat.png?raw=true)
+
+A SmartAgent user can transfer the ticket to another agent.
+![Transfer ticket](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/6_TransferTicket.png?raw=true)
+
+
+This is the ticket view. 
+![Ticket view](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/7_TicketView.png?raw=true)
+
+
+The ticket notes can be viewed in the side panel that appears when you click on 'Ticket Notes'. 
+![Ticket Notes](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/7_TicketView.png?raw=true)
+
+
+SmartAgents can send email responses directly in the ticket.
+![Ticket reply](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/9_TicketReply.png?raw=true)
+
+There is also a Dashboard with the SmartAgent's performance stats.
+![Dashboard](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/10_Dashboard.png?raw=true)
 
 <!-- <details>
   <summary>Backend Dependencies 🪄</summary>
