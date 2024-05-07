@@ -93,7 +93,7 @@ This is the ticket view.
 
 The ticket notes can be viewed in the side panel that appears when you click on 'Ticket Notes'. 
 
-![Ticket Notes](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/7_TicketView.png?raw=true)
+![Ticket Notes](https://github.com/glowiep/SmartAgent/blob/main/planning/docs/8_TicketNotes.png?raw=true)
 
 <br />
 
