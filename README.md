@@ -34,7 +34,7 @@ To run this project locally, clone this repository and navigate to the root dire
 3. Run ```npm run dev``` to start the frontend server. It will run on http://localhost:5173
 
 
-<details>
+<!-- <details>
   <summary>Backend Dependencies 🪄</summary>
 
   ### Ruby Version
@@ -104,4 +104,4 @@ To run this project locally, clone this repository and navigate to the root dire
     #### Build Tools
     - **vite** (^5.2.0): Build tool for modern web development with fast build times.
   </details>
-</details>
+</details> -->
