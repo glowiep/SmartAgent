@@ -33,7 +33,7 @@ Notes on the AI Chatbot on the Landing page created with [FlowiseAI](https://flo
 
 4. Run migrations with ```bin/rails db:migrate```.
 
-4. If you want to recreate the database from scratch, run ```bin/rails db:reset``` to create, load and seed the datbase. Check step 3 if this returns an error.
+4. If you want to recreate the database from scratch, run ```bin/rails db:reset``` to create, load and seed the database. Check step 3 if this returns an error.
 
 5. Run ```bin/rails s -b 0.0.0.0``` to start the server
 
