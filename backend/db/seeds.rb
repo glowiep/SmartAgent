@@ -22,7 +22,7 @@ admin_role = Role.create(role: 'Admin', description: 'Administrator role')
 Agent.create(email: 'triage@gmail.com', full_name: 'Triage', password: 'password', role_id: admin_role.id)
 Agent.create(email: 'sebastianvaron96@gmail.com', full_name: 'Sebastian varon', password: 'password',
              role_id: admin_role.id)
-Agent.create(email: 'glorialimartt@gmail.com', full_name: 'Gloria Lim', password: 'password',
+Agent.create(email: 'glim@gmail.com', full_name: 'Gloria Lim', password: 'password',
              role_id: admin_role.id)
 
              7.times do
